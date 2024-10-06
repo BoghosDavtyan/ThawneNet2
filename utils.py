@@ -203,7 +203,7 @@ def build():
     # Check if ICON path is defined in the config file and not empty
     if config.get('ICON', '').strip() != '':
         pyinstaller_cmd.append(f"--icon={config['ICON'].strip()}")
-    pyinstaller_cmd.append("Client\\client.py")
+    pyinstaller_cmd.append("Client/client.py")
     # Execute the PyInstaller command
     subprocess.run(pyinstaller_cmd)
     print(stdOutput("success") + f"{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')} Successfully exe built in \033[1m\033[32m" + os.getcwd() + direc + "\dist\client.exe" + "\033[0m")
